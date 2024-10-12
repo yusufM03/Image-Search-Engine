@@ -1,5 +1,5 @@
 # Elastic_Search_image_VGG16
-
+(In Progress)
 **First Steps**:
 
  * 1.Feature extraction from images **
@@ -10,6 +10,10 @@
  * 5.Perform k-NN Search
 
 
-
+Reference:
+ . Guide
+https://www.elastic.co/guide/en/elasticsearch/reference/8.15/docker.html
+https://www.elastic.co/guide/en/machine-learning/8.15/ml-nlp-text-emb-vector-search-example.html
+https://www.elastic.co/guide/en/elasticsearch/reference/8.15/knn-search.html
 
 
