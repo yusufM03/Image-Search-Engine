@@ -18,8 +18,7 @@
       * It's recommended to reduce the vector dimentinality using **PCA**
       * For memory saving : We can use quantization . It converts float vectors into byte vectors
       * We can add filter option ( tags for examples) to reduce the number of images to seach .
-  Semantic Search:
-       * Using a previously deployed text embedding model, it retrieves results based on the intent and the contextual meaning of a search query.
+      * Semantic Search: Using a previously deployed text embedding model, it retrieves results based on the intent and the contextual meaning of a search query.
    
 
 
