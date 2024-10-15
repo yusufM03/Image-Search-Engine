@@ -10,6 +10,20 @@
 4. **Load CSV Data into ElasticSearch**
 5. **Perform k-NN Search**
 
+
+5. **Different methods of KNN plugin**:
+   Approximate KNN  : + Low latency
+                      - less accuracy
+
+      * It's recommended to reduce the vector dimentinality using **PCA**
+      * For memory saving : We can use quantization . It converts float vectors into byte vectors
+      * We can add filter option ( tags for examples) to reduce the number of images to seach .
+  Semantic Search:
+       * Using a previously deployed text embedding model, it retrieves results based on the intent and the contextual meaning of a search query.
+   
+
+
+
 ## References
 
 - [ElasticSearch Docker Guide](https://www.elastic.co/guide/en/elasticsearch/reference/8.15/docker.html)
