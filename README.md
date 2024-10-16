@@ -19,8 +19,10 @@
       * For memory saving : We can use quantization . It converts float vectors into byte vectors
       * We can add filter option ( tags for examples) to reduce the number of images to seach .
       * Semantic Search: Using a previously deployed text embedding model, it retrieves results based on the intent and the contextual meaning of a search query.
-   
-1. ElasticSearch Connection
+
+For Testing:
+
+1. ElasticSearch Connection :
   `docker run --name elasticsearch --net elas -e "discovery.type=single-node" -e "xpack.security.enabled=false" -p 9200:9200 -p 9300:9300 docker.elastic.co/elasticsearch/elasticsearch:8.15.2`
 
 2. `python app.py`
