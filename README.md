@@ -1,7 +1,3 @@
-Here’s an enhanced and well-structured format for your **Elastic_Search_image_VGG16** project’s README, focusing on clarity, organization, and highlighting key components of the workflow:
-
----
-
 # Elastic Search Image VGG16 Similarity
 
 **Status:** In Progress
