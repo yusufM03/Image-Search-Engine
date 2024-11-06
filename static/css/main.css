@@ -1,0 +1,61 @@
+/* Custom styles for image preview */
+#imagePreview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#imagePreview img {
+  max-width: 100%; /* Ensures the image doesn't overflow */
+  width: 300px; /* Adjust the preview image size */
+  padding-bottom: 20px;
+}
+
+/* Custom drop zone styles */
+#dropzone {
+  width: 90%;
+  height: 300px;
+  border: 2px dashed #4a5568;
+  border-radius: 0.5rem;
+  background-color: #1a202c;
+  display: none; /* Initially hidden */
+  align-items: center;
+  justify-content: center;
+  color: #cbd5e0;
+  font-size: 1.25rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+#dropzone.dragover {
+  border-color: #68d391; /* Tailwind green-400 */
+  color: #68d391; /* Tailwind green-400 */
+}
+
+#result {
+  display: flex;                    /* Use flexbox for layout */
+  flex-wrap: wrap;                 /* Allow images to wrap onto the next line */
+  justify-content: flex-start;      /* Align items at the start */
+  padding: 20px;
+  border-radius: 15px;             /* Rounded corners */
+  background: linear-gradient(135deg, #f0f0f5, #c0c0cf); /* Gradient background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
+  margin-top: 20px;
+  border: 2px solid #e0e0e0;       /* Optional border */
+}
+
+#result img {
+  width: 150px;                   /* Set a specific width for images */
+  height: auto;                   /* Maintain aspect ratio */
+  border-radius: 10px;            /* Optional: Rounds the corners of the images */
+  margin: 10px;                   /* Adds some space between the images */
+  transition: transform 0.3s ease; /* Optional: Adds smooth animation on hover */
+}
+
+#result img:hover {
+  transform: scale(1.1);           /* Optional: Increases size slightly on hover */
+}

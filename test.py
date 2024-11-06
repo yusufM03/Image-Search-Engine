@@ -6,11 +6,11 @@ from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from tensorflow.keras.models import Model
 from elasticsearch import Elasticsearch
-
+import ElasticManager as ELA
 # Load the VGG16 model with ImageNet weights
 base_model = VGG16(weights='imagenet')
 # Use the `fc2` layer as the output for feature extraction
-feat_extractor = Model(inputs=base_model.input, outputs=base_model.get_layer("fc2").output)
+feat_extractor = Model(inputs=base_model.input, outputs=base_model.get_layer("fc1").output)
 
 # Define the path to the folder containing images
 main_folder = "test_image"  
@@ -18,13 +18,10 @@ main_folder = "test_image"
 def extract_features(img_path):
     # Load and preprocess the image
     img = load_img(img_path, target_size=(224, 224))
-    #img_array = img_to_array(img)
-    #img_array = np.expand_dims(img_array, axis=0)
-    #img_array = preprocess_input(img_array)  # Preprocess the image
-    #img = load_img(img_path, target_size=(224, 224))  # Resize to VGG16 expected input
     x = img_to_array(img)
-    x = np.expand_dims(x, axis=0)  # Add batch dimension
-    x = x / 255.0  # Normalize if needed
+    x = np.expand_dims(x, axis=0)  
+    x = preprocess_input (x)
+    x=x/255.
     features = feat_extractor.predict(x)  # Extract features
     return features.flatten().tolist()  # Flatten the features and convert to list
 
@@ -64,9 +61,9 @@ def search_similar_images(es,feature_vector, top_n=5):
 
 # Example usage
 if __name__ == "__main__":
-    es = Elasticsearch("http://localhost:9200")
+    es=ELA.elasticsearchManager()
     
-    img_name = os.path.join(main_folder, "images.jpg")  # Ensure this image exists in the folder
+    img_name = os.path.join(main_folder, "images.jpeg")  # Ensure this image exists in the folder
 
     # Extract features from the specified image
     feature_vector = extract_features(img_name)
@@ -74,7 +71,8 @@ if __name__ == "__main__":
 
     
     # Perform search for similar images
-    similar_images = search_similar_images(es,feature_vector, 5)
+    desired_tag=""
+    similar_images = es.search_similar_images_tags("image-index-combination",feature_vector,desired_tag,)
     print("Similar Images:")
     for sim_img in similar_images:
         print(sim_img)
