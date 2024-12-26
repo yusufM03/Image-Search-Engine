@@ -32,7 +32,7 @@ This project integrates **ElasticSearch** with the **k-NN plugin** for image sim
 
 ---
 ### **Demo**
-[![Demo Video](https://github.com/yusufM03/Image-Search-Engine/blob/main/assets/thumbnail.jpg)](https://github.com/your-username/your-repo/blob/main/assets/demo.mp4)
+[![Demo Video](https://github.com/yusufM03/Image-Search-Engine/blob/main/assets/thumbnail.png)](https://github.com/yusufM03/Image-Search-Engine/blob/main/assets/Demo.mp4)
 
 ---
 
@@ -82,7 +82,7 @@ You can easily set up both **ElasticSearch** and the **Flask app** using Docker 
 #### **1. Clone the Repository:**
 ```bash
 git clone https://github.com/yusufM03/Image-Search-Engine.git
-cd <repository_name>
+cd Image-Search-Engine
 ```
 
 #### **2. Build and Start the Services:**
