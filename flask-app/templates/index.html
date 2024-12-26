@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionSearch</title>
+    
+    <!-- Import Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <style>
+        /* Image Hover Effect */
+        .image-container img {
+            transition: transform 0.3s ease;
+            width: 1000px; /* Increased size */
+            height: 1000px; /* Increased size */
+            object-fit: cover; /* Ensures image fits within the defined size */
+        }
+        .image-container:hover img {
+            transform: scale(2); /* Scales the image larger on hover */
+        }
+
+        /* Modify the container size for larger images */
+        .image-container {
+            margin: 10px;
+            padding: 5px;
+            display: inline-block;
+            max-width: 1000px; /* Adjust the max width */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-800 text-white min-h-screen">
+
+    <header>
+        <nav class="flex justify-between items-center p-4 bg-gray-900 border-b-4 border-green-500">
+            <a href="#home" class="text-white font-bold text-xl"></a>
+            <div class="space-x-4">
+                <a href="#home" class="text-white hover:text-green-500">HOME</a>
+                <a href="#docs" class="text-white hover:text-green-500">DOCS</a>
+                <a href="#start" class="text-white hover:text-green-500">START</a>
+                <a href="#about" class="text-white hover:text-green-500">ABOUT</a>
+                <a href="#contact" class="text-white hover:text-green-500">CONTACT</a>
+            </div>
+            <button class="bg-transparent border border-white text-white py-2 px-4 rounded hover:bg-green-500">Log Out</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex flex-col items-center justify-center h-full p-8">
+        <h1 class="text-3xl font-semibold text-center mb-6">ImageSearch Engine</h1>
+
+        <!-- Image Search Form -->
+        <form id="imageSearchForm" class="flex flex-col items-center bg-gray-900 p-6 rounded-md shadow-lg">
+            <label for="image" class="font-bold mb-4">Upload Image</label>
+            <input type="file" id="image" name="image" class="mb-4 p-2 bg-gray-700 text-white rounded-md" onchange="previewImage(event)">
+            <label for="tag" class="font-bold mb-4">Enter tag</label>
+            <input type="text" id="tag" name="tag" class="mb-4 p-2 bg-gray-700 text-white rounded-md" placeholder="e.g., nature, landscape, animals">
+            <label for="num_images" class="font-bold mb-4">Number of Images</label>
+            <input type="number" id="num_images" name="num_images" class="mb-4 p-2 bg-gray-700 text-white rounded-md" placeholder="Enter the number of images" min="1" value="6">
+            <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg">Search</button>
+        </form>
+
+        <!-- Preview Container -->
+        <div id="imagePreview" class="mt-6"></div>
+
+        <!-- Result Section -->
+        <div id="result" class="mt-6"></div>
+    </main>
+
+    <script src="../static/js/main.js"></script>
+</body>
+</html>
