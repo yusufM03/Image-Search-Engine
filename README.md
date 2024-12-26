@@ -5,6 +5,7 @@
 
 ### **Project Overview**
 This project integrates **ElasticSearch** with the **k-NN plugin** for image similarity search, covering over 1 million images from the Open Images Dataset. By using the **VGG16 model** to extract features from images, it enables efficient retrieval based on feature similarity. Additionally, fuzzy search is supported through the addition of tags and the use of dimensionality reduction techniques.
+
 ---
 ### **Table of Contents**
 - [Project Overview](#project-overview)
