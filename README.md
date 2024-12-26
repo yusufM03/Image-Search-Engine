@@ -1,7 +1,7 @@
 # **Elastic Search Image VGG16 Similarity**
 
-[![LinkedIn](https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png)](https://www.linkedin.com/in/youssef-makhlouf-608aa622a/) |
-[![Kaggle](https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png)](https://www.kaggle.com/yusuf03)
+[**Linkedin Profile**](https://www.linkedin.com/in/youssef-makhlouf-608aa622a/) |
+[**Kaggle Profile**](https://www.kaggle.com/yusuf03) 
 
 ### **Project Overview**
 This project integrates **ElasticSearch** with the **k-NN plugin** for image similarity search, covering over 1 million images from the Open Images Dataset. By using the **VGG16 model** to extract features from images, it enables efficient retrieval based on feature similarity. Additionally, fuzzy search is supported through the addition of tags and the use of dimensionality reduction techniques.
